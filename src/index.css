@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  --color-burgundy: #581F2A;
+  --color-wine: #702D35;
+  --color-ivory: #F5E8D0;
+  --color-champagne: #EFE0C4;
+  --color-gold: #B2945E;
+  --color-gold-deep: #7B6134;
+  --color-olive: #77704C;
+  --color-brown: #493027;
+
+  --font-script: "Pinyon Script", cursive;
+  --font-vibes: "Great Vibes", cursive;
+  --font-editorial: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Cinzel", Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #F5E8D0;
+    color: #493027;
+    font-family: "Cormorant Garamond", Georgia, serif;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #F5E8D0;
+    color: #493027;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* Handmade antique cotton paper texture */
+.paper-ivory-surface {
+  background-color: #F5E8D0;
+  background-image:
+    radial-gradient(ellipse at 50% 35%, rgba(255, 250, 240, 0.55) 0%, rgba(239, 224, 196, 0.35) 60%, rgba(214, 190, 152, 0.25) 100%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.36  0 0 0 0 0.24  0 0 0 0 0.16  0 0 0 0.045 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperGrain)'/%3E%3C/svg%3E");
+}
+
+/* Cardstock subtle paper grain */
+.cardstock-ivory {
+  background-color: #F8EEDB;
+  background-image:
+    linear-gradient(145deg, rgba(255, 252, 245, 0.65) 0%, rgba(245, 232, 208, 0.4) 55%, rgba(232, 213, 180, 0.45) 100%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='cardGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.35  0 0 0 0 0.22  0 0 0 0 0.14  0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23cardGrain)'/%3E%3C/svg%3E");
+}
+
+/* Olive-brown miniature card stock */
+.cardstock-olive {
+  background-color: #6B6443;
+  background-image:
+    linear-gradient(155deg, rgba(132, 124, 86, 0.38) 0%, rgba(107, 100, 67, 0.2) 55%, rgba(72, 66, 42, 0.42) 100%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='oliveGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.12  0 0 0 0 0.1  0 0 0 0 0.06  0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23oliveGrain)'/%3E%3C/svg%3E");
+}
+
+/* Deep burgundy velvet-cotton envelope paper */
+.paper-burgundy {
+  background-color: #581F2A;
+  background-image:
+    radial-gradient(ellipse at 35% 25%, rgba(126, 49, 60, 0.45) 0%, rgba(88, 31, 42, 0.2) 55%, rgba(56, 16, 24, 0.55) 100%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='burgundyGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.95  0 0 0 0 0.85  0 0 0 0 0.78  0 0 0 0.045 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23burgundyGrain)'/%3E%3C/svg%3E");
+}
+
+/* Subtle vintage floral damask pattern for burgundy footer & envelope liner */
+.damask-burgundy {
+  background-color: #581F2A;
+  background-image:
+    radial-gradient(ellipse at 50% 40%, rgba(112, 45, 53, 0.48) 0%, rgba(88, 31, 42, 0.82) 65%, rgba(62, 18, 27, 0.96) 100%),
+    url("data:image/svg+xml,%3Csvg width='120' height='140' viewBox='0 0 120 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23B2945E' stroke-opacity='0.11' stroke-width='0.9'%3E%3Cpath d='M60 12 C68 26 82 32 82 48 C82 62 68 68 60 82 C52 68 38 62 38 48 C38 32 52 26 60 12 Z'/%3E%3Cpath d='M60 22 C65 32 74 37 74 48 C74 58 65 63 60 72 C55 63 46 58 46 48 C46 37 55 32 60 22 Z'/%3E%3Cpath d='M60 82 C68 96 82 102 82 118 C82 130 68 134 60 138 C52 134 38 130 38 118 C38 102 52 96 60 82 Z'/%3E%3Cpath d='M0 48 C14 48 22 36 28 24 C32 38 28 56 16 66 C28 74 32 92 28 104 C22 92 14 82 0 82'/%3E%3Cpath d='M120 48 C106 48 98 36 92 24 C88 38 92 56 104 66 C92 74 88 92 92 104 C98 92 106 82 120 82'/%3E%3Ccircle cx='60' cy='48' r='4'/%3E%3Ccircle cx='60' cy='115' r='3'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Ivory floral botanical envelope liner pattern */
+.liner-floral-ivory {
+  background-color: #F7ECDA;
+  background-image:
+    linear-gradient(180deg, rgba(255, 250, 240, 0.55) 0%, rgba(239, 224, 196, 0.35) 100%),
+    url("data:image/svg+xml,%3Csvg width='110' height='110' viewBox='0 0 110 110' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke-linecap='round'%3E%3Cpath d='M28 52 C28 38 40 30 50 38 C58 28 70 36 66 48 C76 54 70 68 58 66 C52 76 38 74 36 62 C26 62 22 56 28 52 Z' stroke='%23702D35' stroke-opacity='0.22' stroke-width='1' fill='%23702D35' fill-opacity='0.06'/%3E%3Cpath d='M44 48 C48 42 56 44 54 52 C52 58 43 56 44 48 Z' stroke='%23581F2A' stroke-opacity='0.28' stroke-width='0.9'/%3E%3Cpath d='M12 20 C22 24 28 32 30 40 M90 18 C82 26 74 32 68 38 M20 92 C28 84 34 76 38 68 M92 88 C82 82 74 74 68 64' stroke='%2377704C' stroke-opacity='0.28' stroke-width='1'/%3E%3Cellipse cx='18' cy='25' rx='5' ry='2.5' transform='rotate(-25 18 25)' fill='%2377704C' fill-opacity='0.14'/%3E%3Cellipse cx='88' cy='24' rx='5' ry='2.5' transform='rotate(30 88 24)' fill='%23B2945E' fill-opacity='0.18'/%3E%3Cellipse cx='86' cy='84' rx='5' ry='2.5' transform='rotate(-30 86 84)' fill='%2377704C' fill-opacity='0.14'/%3E%3Cellipse cx='22' cy='86' rx='5' ry='2.5' transform='rotate(28 22 86)' fill='%23B2945E' fill-opacity='0.18'/%3E%3Ccircle cx='55' cy='14' r='2' fill='%23B2945E' fill-opacity='0.25'/%3E%3Ccircle cx='12' cy='58' r='2' fill='%23702D35' fill-opacity='0.2'/%3E%3Ccircle cx='98' cy='56' r='2' fill='%23702D35' fill-opacity='0.2'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-reduce-static {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   DEDICATED PRINT STYLESHEET (A4 PORTRAIT SINGLE-PAGE)
+   ========================================================= */
+@page {
+  size: A4 portrait;
+  margin: 10mm;
+}
+
+@media print {
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    background: #F5E8D0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    overflow: hidden !important;
+  }
+
+  .no-print,
+  #app-interactive-shell {
+    display: none !important;
+  }
+
+  #printable-invitation-print-node {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 277mm !important;
+    max-height: 277mm !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    page-break-after: avoid !important;
+    page-break-before: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .printable-sheet {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    box-shadow: none !important;
+  }
+}
+
